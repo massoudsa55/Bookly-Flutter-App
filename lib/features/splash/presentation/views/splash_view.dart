@@ -6,8 +6,13 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SplashViewBody();
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        centerTitle: true,
+        title: const Text('Bookly'),
+      ),
+      body: const SplashViewBody(),
+    );
   }
 }
-
-
