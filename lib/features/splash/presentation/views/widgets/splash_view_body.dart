@@ -1,5 +1,8 @@
+import 'package:bookly_flutter_app/constants.dart';
 import 'package:bookly_flutter_app/core/utils/assets.dart';
+import 'package:bookly_flutter_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'sliding_text.dart';
 
@@ -18,6 +21,22 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
+    initSlidingAnimations();
+    navigateToHomeView();
+  }
+
+  void navigateToHomeView() {
+    Future.delayed(const Duration(seconds: 3), () {
+      // Navigator.pushReplacementNamed(context, '/home');
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.fadeIn,
+        duration: kTransitionDuration,
+      );
+    });
+  }
+
+  void initSlidingAnimations() {
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
