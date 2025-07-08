@@ -10,7 +10,28 @@ class HomeViewBody extends StatelessWidget {
     return Column(
       // crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.start,
-      children: [CustomAppBar(), CustomBooklyItem()],
+      children: [CustomAppBar(), FeaturedBooksListView()],
+    );
+  }
+}
+
+class FeaturedBooksListView extends StatelessWidget {
+  const FeaturedBooksListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.sizeOf(context).height * .2,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 10, // Example item count
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6.0),
+            child: CustomBooklyItem(),
+          );
+        },
+      ),
     );
   }
 }
