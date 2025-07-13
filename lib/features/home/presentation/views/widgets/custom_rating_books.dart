@@ -10,11 +10,11 @@ class CustomRatingBook extends StatelessWidget {
       children: [
         Icon(Icons.star, color: Colors.amber, size: 16),
         SizedBox(width: 5),
-        Text('4.5', style: Styles.subtitleRegular16),
+        Text('4.5', style: Styles.textStyle16),
         SizedBox(width: 10),
         Text(
           '(200 reviews)',
-          style: Styles.subtitleRegular14.copyWith(color: Colors.grey),
+          style: Styles.textStyle14.copyWith(color: Colors.grey),
         ),
       ],
     );

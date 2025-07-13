@@ -1,27 +1,29 @@
+import 'package:bookly_flutter_app/constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
-  // Font family for the app
-  static const String fontFamily = 'GT Sectra Fine Regular';
-  static const TextStyle titleMudium18 = TextStyle(
+  // Text styles used throughout the app
+  static const TextStyle textStyle18 = TextStyle(
     fontSize: 18,
-    fontFamily: fontFamily,
     fontWeight: FontWeight.w600,
   );
-
-  static const TextStyle titleBold20 = TextStyle(
+  // FontWeight.normal is the default, regular text style
+  static const TextStyle textStyle20 = TextStyle(
     fontSize: 20,
-    fontFamily: fontFamily,
-    fontWeight: FontWeight.w700,
+    fontFamily: kFontGTSectraFine,
+    fontWeight: FontWeight.normal,
   );
-  static const TextStyle subtitleRegular14 = TextStyle(
+  static const TextStyle textStyle30 = TextStyle(
+    fontSize: 30,
+    fontFamily: kFontGTSectraFine,
+    fontWeight: FontWeight.normal,
+  );
+  static const TextStyle textStyle14 = TextStyle(
     fontSize: 14,
-    fontFamily: fontFamily,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.normal,
   );
-  static const TextStyle subtitleRegular16 = TextStyle(
+  static const TextStyle textStyle16 = TextStyle(
     fontSize: 16,
-    fontFamily: fontFamily,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
   );
 }

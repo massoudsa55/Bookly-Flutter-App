@@ -8,11 +8,11 @@ class CustomPriceBooks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text('19.99 €', style: Styles.titleBold20),
+        Text('19.99 €', style: Styles.textStyle20),
         SizedBox(width: 10),
         Text(
           'Free Shipping',
-          style: Styles.subtitleRegular14.copyWith(color: Colors.green),
+          style: Styles.textStyle14.copyWith(color: Colors.green),
         ),
       ],
     );

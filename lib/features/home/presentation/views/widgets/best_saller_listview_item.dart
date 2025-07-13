@@ -21,14 +21,14 @@ class BestSellerListViewItem extends StatelessWidget {
             children: [
               Text(
                 'Harry Potter\n and the Goblet of Fire',
-                style: Styles.titleMudium18,
+                style: Styles.textStyle18,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
               SizedBox(height: 5),
               Text(
                 'J.K. Rowling',
-                style: Styles.subtitleRegular14.copyWith(color: Colors.grey),
+                style: Styles.textStyle14.copyWith(color: Colors.grey),
               ),
               SizedBox(height: 5),
               // Price & Rating Row
