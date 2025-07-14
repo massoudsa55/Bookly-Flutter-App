@@ -10,7 +10,6 @@ abstract class Styles {
   // FontWeight.normal is the default, regular text style
   static const TextStyle textStyle20 = TextStyle(
     fontSize: 20,
-    fontFamily: kFontGTSectraFine,
     fontWeight: FontWeight.normal,
   );
   static const TextStyle textStyle30 = TextStyle(

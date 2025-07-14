@@ -1,5 +1,6 @@
-import 'package:bookly_flutter_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/styles.dart';
 
 class CustomPriceBooks extends StatelessWidget {
   const CustomPriceBooks({super.key});
