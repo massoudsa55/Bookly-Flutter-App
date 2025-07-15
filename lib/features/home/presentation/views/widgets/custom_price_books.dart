@@ -10,11 +10,11 @@ class CustomPriceBooks extends StatelessWidget {
     return Row(
       children: [
         Text('19.99 €', style: Styles.textStyle20),
-        SizedBox(width: 10),
-        Text(
-          'Free Shipping',
-          style: Styles.textStyle14.copyWith(color: Colors.green),
-        ),
+        // SizedBox(width: 10),
+        // Text(
+        //   'Free Shipping',
+        //   style: Styles.textStyle14.copyWith(color: Colors.green),
+        // ),
       ],
     );
   }

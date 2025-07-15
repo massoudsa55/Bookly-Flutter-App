@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/styles.dart';
-import 'best_saller_listview_item.dart';
+import 'beast_seller_listview.dart';
 import 'custom_appbar.dart';
 import 'featured_books_listview.dart';
 
@@ -10,26 +10,32 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          FeaturedBooksListView(),
-          SizedBox(height: 30),
-          Text('Best Seller', style: Styles.textStyle18),
-          SizedBox(height: 10),
-          Expanded(
-            child: ListView.separated(
-              itemBuilder: (context, index) => BestSellerListViewItem(),
-              separatorBuilder: (context, index) => SizedBox(height: 20),
-              itemCount: 10,
+    return CustomScrollView(
+      physics: BouncingScrollPhysics(),
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              // mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                CustomAppBar(),
+                FeaturedBooksListView(),
+                SizedBox(height: 30),
+                Text('Best Seller', style: Styles.textStyle18),
+                SizedBox(height: 10),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+        // using BestSellerListViewItem in ListView.builder
+        SliverToBoxAdapter(
+          child: BestSellerListView(),
+        ),
+      ],
     );
   }
 }
+
+
