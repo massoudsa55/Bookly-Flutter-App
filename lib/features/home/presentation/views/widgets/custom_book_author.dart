@@ -9,7 +9,10 @@ class BookAuthor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       'Rudyard Kipling',
-      style: Styles.textStyle18.copyWith(color: Colors.grey),
+      style: Styles.textStyle18.copyWith(
+        fontStyle: FontStyle.italic,
+        fontWeight: FontWeight.w500,
+      ),
       textAlign: TextAlign.center,
     );
   }
