@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../home/presentation/views/widgets/best_saller_listview_item.dart';
 import 'custom_search_text_field.dart';
 import 'search_result_listview.dart';
 
@@ -51,4 +48,3 @@ class SearchViewBody extends StatelessWidget {
     );
   }
 }
-
