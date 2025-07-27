@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 
 abstract class Failure {
   final String message;
@@ -26,7 +25,8 @@ class ServerFailure extends Failure {
       case DioExceptionType.cancel:
         return ServerFailure('Request cancelled by ApiService');
       case DioExceptionType.connectionError:
-        if (error.message != null && error.message!.contains('SocketException')) {
+        if (error.message != null &&
+            error.message!.contains('SocketException')) {
           return ServerFailure('No Internet connection');
         }
         break;
@@ -38,9 +38,7 @@ class ServerFailure extends Failure {
         );
     }
     // Ensure a ServerFailure is always returned
-    return ServerFailure(
-      'Oops, something went wrong, please try again later',
-    );
+    return ServerFailure('Oops, something went wrong, please try again later');
   }
 
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
