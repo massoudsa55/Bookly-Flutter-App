@@ -5,7 +5,6 @@ import '../../../../../core/utils/assets.dart';
 class BookCoverImage extends StatelessWidget {
   const BookCoverImage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;

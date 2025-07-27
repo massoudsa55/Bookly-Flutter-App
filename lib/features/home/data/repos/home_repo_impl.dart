@@ -37,7 +37,7 @@ class HomeRepoImpl implements HomeRepo {
       final response = await apiService.get(
         endpoint: 'volumes?Filtering=free-ebooks&q=subject:programming',
       );
-
+      print('response: $response');
       final books =
           (response['items'] as List)
               .map((item) => BookModel.fromJson(item))
@@ -51,5 +51,4 @@ class HomeRepoImpl implements HomeRepo {
       return Left(CacheFailure(e.toString()));
     }
   }
-  
 }

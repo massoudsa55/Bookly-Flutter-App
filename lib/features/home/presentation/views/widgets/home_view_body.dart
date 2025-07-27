@@ -30,12 +30,8 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         // using BestSellerListViewItem in ListView.builder
-        SliverToBoxAdapter(
-          child: BestSellerListView(),
-        ),
+        SliverToBoxAdapter(child: BestSellerListView()),
       ],
     );
   }
 }
-
-
