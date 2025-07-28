@@ -23,10 +23,13 @@ class FeaturedBooksListView extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: (state as FeaturedBooksSuccess).books.length,
+
                 itemBuilder: (context, index) {
                   final book = (state).books[index];
                   return CustomBooklyItem(book: book);
                 },
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                physics: const BouncingScrollPhysics(),
               ),
             );
           case const (FeaturedBooksFailure):
