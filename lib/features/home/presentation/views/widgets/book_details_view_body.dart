@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../../data/models/book_model/book_model.dart';
 import 'header_section_book_details.dart';
 import 'shopping_section_book_details.dart';
 import 'similar_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.book});
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +20,13 @@ class BookDetailsViewBody extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  HeaderSection(),
-                  SizedBox(height: 37),
-                  ShoppingSection(),
-                  Expanded(child: SizedBox(height: 50)),
-                  SimilarBooksSection(),
-                  SizedBox(height: 40),
+                children: [
+                  HeaderSection(book: book),
+                 const  SizedBox(height: 37),
+                 const  ShoppingSection(),
+                 const  Expanded(child: SizedBox(height: 50)),
+                 const  SimilarBooksSection(),
+                 const  SizedBox(height: 40),
                 ],
               ),
             ),

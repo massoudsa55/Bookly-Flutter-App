@@ -1,20 +1,21 @@
-import 'package:bookly_flutter_app/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
-import 'custom_book_listview_item.dart';
+import '../../../data/models/book_model/book_model.dart';
+import 'custom_booktly_item.dart';
 import 'custom_price_books.dart';
 import 'custom_rating_books.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+  const BestSellerListViewItem({super.key, required this.book});
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // Container(width: 120, height: 180, color: Colors.red),
-        CustomBookListViewItem(),
+        CustomBooklyItem(book: book),
         SizedBox(width: 30),
         Expanded(
           child: Column(
@@ -23,7 +24,7 @@ class BestSellerListViewItem extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.sizeOf(context).width * .9,
                 child: Text(
-                  'Harry Potter and the Goblet of Fire',
+                  book.volumeInfo.title ?? 'No Title',
                   style: Styles.textStyle20.copyWith(
                     fontFamily: kFontGTSectraFine,
                   ),
@@ -33,14 +34,17 @@ class BestSellerListViewItem extends StatelessWidget {
               ),
               SizedBox(height: 3),
               Text(
-                'J.K. Rowling',
+                book.volumeInfo.authors?.join(', ') ?? 'No Author',
                 style: Styles.textStyle14.copyWith(color: Color(0xffBDBDBD)),
               ),
               SizedBox(height: 3),
               // Price & Rating Row
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [CustomPriceBooks(), CustomRatingBook()],
+                children: [
+                  CustomPriceBooks(book: book),
+                  CustomRatingBook(book: book),
+                ],
               ),
             ],
           ),

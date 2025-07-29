@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_router.dart';
-import '../../../../home/presentation/views/widgets/best_saller_listview_item.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -22,7 +21,7 @@ class SearchResultListView extends StatelessWidget {
                 extra: {'bookId': index},
               );
             },
-            child: const BestSellerListViewItem(),
+            // child: const BestSellerListViewItem(),
           ),
         );
       },
