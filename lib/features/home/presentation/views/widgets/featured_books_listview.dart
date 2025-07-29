@@ -13,7 +13,6 @@ class FeaturedBooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
-        print('FeaturedBooksListView: Current state is ${state.runtimeType}');
         switch (state.runtimeType) {
           case const (FeaturedBooksLoading):
             return const CustomLoadingIndicator();
@@ -26,9 +25,12 @@ class FeaturedBooksListView extends StatelessWidget {
 
                 itemBuilder: (context, index) {
                   final book = (state).books[index];
-                  return CustomBooklyItem(book: book);
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: CustomBooklyItem(book: book),
+                  );
                 },
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+
                 physics: const BouncingScrollPhysics(),
               ),
             );
