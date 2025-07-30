@@ -13,43 +13,50 @@ class BestSellerListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CustomBooklyItem(book: book),
-        SizedBox(width: 30),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.sizeOf(context).width * .9,
-                child: Text(
-                  book.volumeInfo.title ?? 'No Title',
-                  style: Styles.textStyle20.copyWith(
-                    fontFamily: kFontGTSectraFine,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30.0),
+      child: Row(
+        children: [
+          CustomBooklyItem(book: book),
+          SizedBox(width: 30),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.sizeOf(context).width * .9,
+                  child: Text(
+                    book.volumeInfo.title ?? 'No Title',
+                    style: Styles.textStyle20.copyWith(
+                      fontFamily: kFontGTSectraFine,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
                   ),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
                 ),
-              ),
-              SizedBox(height: 3),
-              Text(
-                book.volumeInfo.authors?.join(', ') ?? 'No Author',
-                style: Styles.textStyle14.copyWith(color: Color(0xffBDBDBD)),
-              ),
-              SizedBox(height: 3),
-              // Price & Rating Row
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomPriceBooks(book: book),
-                  CustomRatingBook(book: book),
-                ],
-              ),
-            ],
+                SizedBox(height: 3),
+                Text(
+                  // book.volumeInfo.authors?.join(', ') ?? 'No Author',
+                  book.volumeInfo.authors?[0] ?? 'Unknown Author',
+                  style: Styles.textStyle14.copyWith(color: Color(0xffBDBDBD)),
+                ),
+                SizedBox(height: 3),
+                // Price & Rating Row
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomPriceBooks(book: book),
+                    CustomRatingBook(
+                      averageRating: book.volumeInfo.averageRating ?? 0.0,
+                      ratingsCount: book.volumeInfo.ratingsCount ?? 0,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -12,15 +12,10 @@ class CustomPriceBooks extends StatelessWidget {
       children: [
         Text(
           book.saleInfo?.listPrice?.amount != null
-              ? '\$${book.saleInfo?.listPrice!.amount}'
+              ? '\$${book.saleInfo?.listPrice!.amount} €'
               : 'Free',
           style: Styles.textStyle20,
         ),
-        // SizedBox(width: 10),
-        // Text(
-        //   'Free Shipping',
-        //   style: Styles.textStyle14.copyWith(color: Colors.green),
-        // ),
       ],
     );
   }

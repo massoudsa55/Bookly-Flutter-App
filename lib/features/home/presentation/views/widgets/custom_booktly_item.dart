@@ -16,7 +16,7 @@ class CustomBooklyItem extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 2.7 / 4,
           child: CachedNetworkImage(
-            imageUrl: book.volumeInfo.imageLinks.thumbnail,
+            imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
             fit: BoxFit.cover,
             placeholder:
                 (context, url) =>

@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 
+import '../../constants.dart';
+
 class ApiService {
-  final String baseUrl = 'https://www.googleapis.com/books/v1/';
+  final String baseUrl = kBaseUrl;
   final Dio dio;
 
   ApiService(this.dio);

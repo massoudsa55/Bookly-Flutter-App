@@ -6,8 +6,7 @@ import 'shopping_section_book_details.dart';
 import 'similar_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key, required this.book});
-  final BookModel book;
+  const BookDetailsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +20,12 @@ class BookDetailsViewBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  HeaderSection(book: book),
-                 const  SizedBox(height: 37),
-                 const  ShoppingSection(),
-                 const  Expanded(child: SizedBox(height: 50)),
-                 const  SimilarBooksSection(),
-                 const  SizedBox(height: 40),
+                  HeaderSection(averageRating: 4.8, ratingsCount: 245),
+                  const SizedBox(height: 37),
+                  const ShoppingSection(),
+                  const Expanded(child: SizedBox(height: 50)),
+                  const SimilarBooksSection(),
+                  const SizedBox(height: 40),
                 ],
               ),
             ),

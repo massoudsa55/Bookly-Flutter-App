@@ -5,12 +5,12 @@ class CustomErrorWidget extends StatelessWidget {
   final String errMessage;
   @override
   Widget build(BuildContext context) {
-  //   return ScaffoldMessenger.of(context).showSnackBar(
-  //     SnackBar(
-  //       content: Text(errMessage),
-  //       backgroundColor: Colors.red,
-  //     ),
-  //   );
+    // return ScaffoldMessenger.of(context).showSnackBar(
+    //   SnackBar(
+    //     content: Text(errMessage),
+    //     backgroundColor: Colors.red,
+    //   ),
+    // );
   return Center(
       child: Text(
         errMessage,
