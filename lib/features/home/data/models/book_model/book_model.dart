@@ -53,4 +53,16 @@ class BookModel extends Equatable {
   List<Object?> get props {
     return [kind, id, etag, selfLink, volumeInfo, saleInfo, accessInfo];
   }
+  // Placeholder for testing purposes
+  static BookModel placeholder() {
+    return BookModel(
+      kind: 'placeholder',
+      id: 'placeholder',
+      etag: 'placeholder',
+      selfLink: 'placeholder',
+      volumeInfo: VolumeInfo.placeholder(),
+      saleInfo: SaleInfo.placeholder(),
+      accessInfo: AccessInfo.placeholder(),
+    );
+  }
 }

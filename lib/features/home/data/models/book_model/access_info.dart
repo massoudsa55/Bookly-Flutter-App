@@ -75,4 +75,22 @@ class AccessInfo extends Equatable {
       quoteSharingAllowed,
     ];
   }
+
+  // Placeholder for testing purposes
+  static AccessInfo placeholder() {
+    return const AccessInfo(
+      country: 'placeholder',
+      viewability: 'ALL_PAGES',
+      embeddable: true,
+      publicDomain: false,
+      textToSpeechPermission: 'ALLOWED',
+      epub: Epub(isAvailable: false),
+      pdf: Pdf(isAvailable: false),
+      webReaderLink:
+          'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d',
+      accessViewStatus:
+          'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d',
+      quoteSharingAllowed: false,
+    );
+  }
 }

@@ -23,14 +23,13 @@ class HomeViewBody extends StatelessWidget {
                 CustomAppBar(),
                 FeaturedBooksListView(),
                 SizedBox(height: 30),
-                Text('Best Seller', style: Styles.textStyle18),
+                Text('Newest Books', style: Styles.textStyle18),
                 SizedBox(height: 10),
               ],
             ),
           ),
         ),
-        // using BestSellerListViewItem in ListView.builder
-        SliverToBoxAdapter(child: BestSellerListView()),
+        SliverToBoxAdapter(child: NewestBooksListView()),
       ],
     );
   }

@@ -7,8 +7,8 @@ import 'custom_booktly_item.dart';
 import 'custom_price_books.dart';
 import 'custom_rating_books.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key, required this.book});
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({super.key, required this.book});
   final BookModel book;
 
   @override
@@ -17,7 +17,10 @@ class BestSellerListViewItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Row(
         children: [
-          CustomBooklyItem(book: book),
+          SizedBox(
+            height: MediaQuery.sizeOf(context).height * .14,
+            child: CustomBooklyItem(book: book),
+          ),
           SizedBox(width: 30),
           Expanded(
             child: Column(

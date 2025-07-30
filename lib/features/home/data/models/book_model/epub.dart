@@ -12,4 +12,10 @@ class Epub extends Equatable {
 
   @override
   List<Object?> get props => [isAvailable];
+
+  static Epub placeholder() {
+    return const Epub(
+      isAvailable: false
+    );
+  }
 }

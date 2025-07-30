@@ -27,7 +27,7 @@ class SaleInfo extends Equatable {
     listPrice:
         json['listPrice'] == null
             ? null
-            : ListPrice.fromJson(json['listPrice'] as Map<String, dynamic>),
+            : ListPrice.fromJson(json[''] as Map<String, dynamic>),
     retailPrice:
         json['retailPrice'] == null
             ? null
@@ -53,4 +53,15 @@ class SaleInfo extends Equatable {
     retailPrice,
     buyLink,
   ];
+  // Placeholder for testing purposes
+  static SaleInfo placeholder() {
+    return const SaleInfo(
+      country: 'US',
+      saleability: 'FOR_SALE',
+      isEbook: true,
+      listPrice: ListPrice(amount: 9.99, currencyCode: 'USD'),
+      retailPrice: RetailPrice(amount: 9.99, currencyCode: 'USD'),
+      buyLink: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d',
+    );
+  }
 }

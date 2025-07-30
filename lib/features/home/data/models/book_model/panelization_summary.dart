@@ -23,4 +23,11 @@ class PanelizationSummary extends Equatable {
 
   @override
   List<Object?> get props => [containsEpubBubbles, containsImageBubbles];
+  // Placeholder for testing purposes
+  static PanelizationSummary placeholder() {
+    return const PanelizationSummary(
+      containsEpubBubbles: false,
+      containsImageBubbles: false,
+    );
+  }
 }

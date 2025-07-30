@@ -18,4 +18,8 @@ class ListPrice extends Equatable {
 
   @override
   List<Object?> get props => [amount, currencyCode];
+
+  factory ListPrice.placeholder() {
+    return const ListPrice(amount: 0.0, currencyCode: 'USD');
+  }
 }

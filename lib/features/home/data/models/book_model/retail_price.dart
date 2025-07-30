@@ -18,4 +18,8 @@ class RetailPrice extends Equatable {
 
   @override
   List<Object?> get props => [amount, currencyCode];
+  // Placeholder for testing purposes
+  static RetailPrice placeholder() {
+    return const RetailPrice(amount: 0.0, currencyCode: 'USD');
+  }
 }

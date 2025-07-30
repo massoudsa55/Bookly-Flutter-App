@@ -13,4 +13,8 @@ class ReadingModes extends Equatable {
 
   @override
   List<Object?> get props => [text, image];
+  // Placeholder for testing purposes
+  static ReadingModes placeholder() {
+    return const ReadingModes(text: true, image: true);
+  }
 }

@@ -18,4 +18,12 @@ class ImageLinks extends Equatable {
 
   @override
   List<Object?> get props => [smallThumbnail, thumbnail];
+  // Placeholder for testing purposes
+  static ImageLinks placeholder() {
+    return const ImageLinks(
+      smallThumbnail:
+          'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d',
+      thumbnail: 'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d',
+    );
+  }
 }

@@ -18,9 +18,9 @@ class CustomBooklyItem extends StatelessWidget {
           child: CachedNetworkImage(
             imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
             fit: BoxFit.cover,
-            placeholder:
-                (context, url) =>
-                    const Center(child: CircularProgressIndicator()),
+            // placeholder:
+            //     (context, url) =>
+            //         const Center(child: CircularProgressIndicator()),
             errorWidget:
                 (context, url, error) => const Icon(
                   Icons.error_outline,

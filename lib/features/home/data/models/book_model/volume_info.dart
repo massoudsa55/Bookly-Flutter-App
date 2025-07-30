@@ -137,4 +137,26 @@ class VolumeInfo extends Equatable {
       canonicalVolumeLink,
     ];
   }
+
+  // Placeholder for testing purposes
+  static VolumeInfo placeholder() {
+    return VolumeInfo(
+      title: 'Placeholder Title',
+      subtitle: 'Placeholder Subtitle',
+      authors: ['Placeholder Author'],
+      publishedDate: '2023-01-01',
+      industryIdentifiers: [],
+      readingModes: ReadingModes.placeholder(),
+      pageCount: 100,
+      printType: 'BOOK',
+      categories: ['Placeholder Category'],
+      averageRating: 0.0,
+      ratingsCount: 0,
+      maturityRating: 'NOT_MATURE',
+      allowAnonLogging: false,
+      contentVersion: '1.0.0',
+      panelizationSummary: PanelizationSummary.placeholder(),
+      imageLinks: ImageLinks.placeholder(),
+    );
+  }
 }

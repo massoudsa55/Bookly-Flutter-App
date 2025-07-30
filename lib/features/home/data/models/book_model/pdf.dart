@@ -12,4 +12,7 @@ class Pdf extends Equatable {
 
   @override
   List<Object?> get props => [isAvailable];
+  static Pdf placeholder() {
+    return const Pdf(isAvailable: false);
+  }
 }
