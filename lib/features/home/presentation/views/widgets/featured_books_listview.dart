@@ -46,8 +46,10 @@
 import 'package:bookly_flutter_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../manager/featured_books/featured_books_cubit.dart';
 import 'custom_booktly_item.dart';
@@ -71,7 +73,14 @@ class FeaturedBooksListView extends StatelessWidget {
                 final book = state.books[index];
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: CustomBooklyItem(book: book),
+                  child: GestureDetector(
+                    onTap:
+                        () => context.push(
+                          AppRouter.kBookDetailsView,
+                          extra: book,
+                        ),
+                    child: CustomBooklyItem(book: book),
+                  ),
                 );
               },
               physics: const BouncingScrollPhysics(),

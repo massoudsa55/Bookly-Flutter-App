@@ -18,9 +18,7 @@ void setupServiceLocator() {
         receiveTimeout: const Duration(seconds: 10),
       ),
     );
-    if (kDebugMode) {
-      dio.interceptors.add(LogInterceptor(responseBody: true));
-    }
+    // s
     return dio;
   });
 

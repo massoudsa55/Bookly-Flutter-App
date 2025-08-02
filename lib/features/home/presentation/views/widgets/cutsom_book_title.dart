@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
 
 class BookTitle extends StatelessWidget {
-  const BookTitle({super.key});
-
+  const BookTitle({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'The Jungle Book',
+    return Text(
+      title,
       style: Styles.textStyle30,
+      overflow: TextOverflow.ellipsis,
       textAlign: TextAlign.center,
     );
   }

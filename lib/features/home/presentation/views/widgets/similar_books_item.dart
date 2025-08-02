@@ -1,22 +1,30 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/assets.dart';
+import '../../../data/models/book_model/book_model.dart';
 
 class SimilarBooksItem extends StatelessWidget {
-  const SimilarBooksItem({super.key});
+  const SimilarBooksItem({super.key, required this.book});
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.5 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: const Color.fromARGB(255, 214, 151, 128),
-          image: const DecorationImage(
-            image: AssetImage(AppImages.testSimilarBook),
-            fit: BoxFit.fill,
-          ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: AspectRatio(
+        aspectRatio: 2.7 / 4,
+        child: CachedNetworkImage(
+          imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
+          fit: BoxFit.cover,
+          // placeholder:
+          //     (context, url) =>
+          //         const Center(child: CircularProgressIndicator()),
+          errorWidget:
+              (context, url, error) => const Icon(
+                Icons.error_outline,
+                size: 50.0,
+                color: Colors.red,
+              ),
         ),
       ),
     );

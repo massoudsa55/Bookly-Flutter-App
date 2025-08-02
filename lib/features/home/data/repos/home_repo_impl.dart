@@ -49,4 +49,24 @@ class HomeRepoImpl implements HomeRepo {
       return Left(CacheFailure(e.toString()));
     }
   }
+  
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String category}) async{
+        try {
+      final response = await apiService.get(
+        endpoint: 'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=relevance',
+      );
+      final books =
+          (response['items'] as List)
+              .map((item) => BookModel.fromJson(item))
+              .toList();
+      return Right(books);
+    } catch (e) {
+      // return Left(ServerFailure());
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
+      return Left(CacheFailure(e.toString()));
+    }
+  }
 }
