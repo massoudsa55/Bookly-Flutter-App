@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../constants.dart';
@@ -21,7 +20,6 @@ void setupServiceLocator() {
     // s
     return dio;
   });
-
   // ApiService
   getIt.registerLazySingleton<ApiService>(() => ApiService(getIt<Dio>()));
   // HomeRepoImpl
