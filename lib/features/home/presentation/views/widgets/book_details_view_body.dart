@@ -23,7 +23,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 children: [
                   HeaderSection(bookModel: bookModel),
                   const SizedBox(height: 37),
-                  const ShoppingSection(),
+                  ShoppingSection(bookModel: bookModel),
                   const Expanded(child: SizedBox(height: 50)),
                   const SimilarBooksSection(),
                   const SizedBox(height: 40),
