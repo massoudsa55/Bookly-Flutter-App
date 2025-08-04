@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../core/functions/launch_url.dart';
 import '../../../data/models/book_model/book_model.dart';
 import 'custom_botton_widget.dart';
 
@@ -23,11 +23,8 @@ class ShoppingButtonsBookDetails extends StatelessWidget {
             ),
             onPressed: () {
               final isAvailable = bookModel.saleInfo!.isEbook;
-              print("isAvailable = $isAvailable");
               if (isAvailable == true) {
-                final Uri url = Uri.parse(bookModel.saleInfo!.buyLink!);
-                print("Url buyLink = $url");
-                _launchUrl(url);
+                launchCusomUrl(context, bookModel.saleInfo!.buyLink);
               }
             },
           ),
@@ -42,18 +39,11 @@ class ShoppingButtonsBookDetails extends StatelessWidget {
               bottomRight: Radius.circular(20),
             ),
             onPressed: () {
-              final Uri url = Uri.parse(bookModel.volumeInfo.previewLink ?? '');
-              _launchUrl(url);
+              launchCusomUrl(context, bookModel.volumeInfo.previewLink);
             },
           ),
         ),
       ],
     );
-  }
-
-  Future<void> _launchUrl(Uri url) async {
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    }
   }
 }
